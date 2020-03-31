@@ -50,6 +50,8 @@ extern "C" {
 
 /* USER CODE END EM */
 
+void HAL_TIM_MspPostInit(TIM_HandleTypeDef *htim);
+
 /* Exported functions prototypes ---------------------------------------------*/
 void Error_Handler(void);
 
@@ -60,6 +62,38 @@ void Error_Handler(void);
 /* Private defines -----------------------------------------------------------*/
 #define Btn_Pin GPIO_PIN_13
 #define Btn_GPIO_Port GPIOC
+#define STEPPER3_Pin GPIO_PIN_9
+#define STEPPER3_GPIO_Port GPIOF
+#define STEPPER2_Pin GPIO_PIN_3
+#define STEPPER2_GPIO_Port GPIOA
+#define STEPPER1_Pin GPIO_PIN_5
+#define STEPPER1_GPIO_Port GPIOA
+#define STEPPER4_Pin GPIO_PIN_6
+#define STEPPER4_GPIO_Port GPIOA
+#define SERVO1_Pin GPIO_PIN_9
+#define SERVO1_GPIO_Port GPIOE
+#define SERVO2_Pin GPIO_PIN_11
+#define SERVO2_GPIO_Port GPIOE
+#define EN4_Pin GPIO_PIN_10
+#define EN4_GPIO_Port GPIOD
+#define DIR4_Pin GPIO_PIN_11
+#define DIR4_GPIO_Port GPIOD
+#define EN3_Pin GPIO_PIN_12
+#define EN3_GPIO_Port GPIOD
+#define DIR3_Pin GPIO_PIN_13
+#define DIR3_GPIO_Port GPIOD
+#define EN2_Pin GPIO_PIN_14
+#define EN2_GPIO_Port GPIOD
+#define DIR2_Pin GPIO_PIN_15
+#define DIR2_GPIO_Port GPIOD
+#define EN1_Pin GPIO_PIN_2
+#define EN1_GPIO_Port GPIOG
+#define DIR1_Pin GPIO_PIN_3
+#define DIR1_GPIO_Port GPIOG
+#define SBUS_TX_Pin GPIO_PIN_10
+#define SBUS_TX_GPIO_Port GPIOC
+#define SBUS_RX_Pin GPIO_PIN_0
+#define SBUS_RX_GPIO_Port GPIOD
 #define Led_Pin GPIO_PIN_7
 #define Led_GPIO_Port GPIOB
 /* USER CODE BEGIN Private defines */
