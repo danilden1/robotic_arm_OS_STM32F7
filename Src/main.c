@@ -88,7 +88,8 @@ static void MX_USART6_UART_Init(void);
 int main(void)
 {
   /* USER CODE BEGIN 1 */
-
+  int test = 0;
+  int test2 = 0;
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -127,19 +128,24 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-    if(HAL_GPIO_ReadPin(Btn_GPIO_Port, Btn_Pin))
+    test = HAL_GetTick();
+    test2 = 0;
+    
+    if((test != test2) == 0)
     {
-      HAL_GPIO_WritePin(Led_GPIO_Port, Led_Pin, GPIO_PIN_SET);
-      HAL_UART_Transmit(&huart2, (uint8_t*)"ON\r\n", 3, 0xFFFF);
-      HAL_UART_Transmit(&huart6, (uint8_t*)"ON\r\n", 3, 0xFFFF);
+      //HAL_GPIO_WritePin(Led_GPIO_Port, Led_Pin, GPIO_PIN_SET);
+      HAL_GPIO_TogglePin(Led_GPIO_Port, Led_Pin);
+      test2 = test;
+      //HAL_UART_Transmit(&huart2, (uint8_t*)"ON\r\n", 3, 0xFFFF);
+      //HAL_UART_Transmit(&huart6, (uint8_t*)"ON\r\n", 3, 0xFFFF);
     }
     else
     {
-      HAL_GPIO_WritePin(Led_GPIO_Port, Led_Pin, GPIO_PIN_RESET);
-      HAL_UART_Transmit(&huart2, (uint8_t*)"OFF\r\n", 4, 0xFFFF);
-      HAL_UART_Transmit(&huart6, (uint8_t*)"OFF\r\n", 4, 0xFFFF);
+      //HAL_GPIO_WritePin(Led_GPIO_Port, Led_Pin, GPIO_PIN_RESET);
+      //HAL_UART_Transmit(&huart2, (uint8_t*)"OFF\r\n", 4, 0xFFFF);
+      //HAL_UART_Transmit(&huart6, (uint8_t*)"OFF\r\n", 4, 0xFFFF);
     }
-    HAL_Delay(100);
+    //HAL_Delay(100);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
